@@ -4,6 +4,9 @@
   <title>Homework</title>
   <meta charset="utf-8">
   <style>
+  a {
+    color:black;
+  }
   h1 {
     font-size:45px;
     text-align: center;
@@ -12,7 +15,7 @@
     padding:20px;
   }
 
-  #grid{
+  #grid1{
     display:grid;
     grid-template-columns:1fr 1fr;
   }
@@ -32,13 +35,62 @@
     border:1px solid gray;
     padding:20px;
   }
+  #fifth{
+    border:1px solid gray;
+    padding:20px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    padding:20px;
+
+  }
+  #box{
+    border:1px solid white;
+    padding:20px;
+  }
+  .container:hover{
+    background:powderblue;
+    cursor:pointer;
+  }
+
   </style>
+  <script>
+   function nightDayHandler(self){
+        var targer = document.querySelector('body');
+        if(self.value === 'night'){
+          targer.style.backgroundColor = 'black';
+          targer.style.color = 'white';
+          self.value = 'day';
+
+          var alist = document.querySelectorAll('h2');
+          var i = 0;
+          while(i < alist.length){
+          alist[i].style.color = 'powderblue';
+          i = i + 1;
+         }
+        } else {
+          targer.style.backgroundColor = 'white';
+          targer.style.color = 'black';
+          self.value = 'night';
+
+          var alist = document.querySelectorAll('h2');
+          var i = 0;
+          while(i < alist.length){
+          alist[i].style.color = 'black';
+          i = i + 1;
+          }
+        }
+      }
+    </script>
 </head>
 
 <body>
-  <h1>Homework</h1>
+  <h1>Homework
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);
+    "></h1>
 
-  <div id="grid">
+  <div id="grid1">
     <div id="first">
     <h2> html 태그 5가지 </h2>
     <ul>
@@ -80,6 +132,23 @@
            표준 규격이 필요성이 커졌습니다. 이 같은 이유로 ECMA 국제 기구에서는
           'ECMAScript standard'라는 스크립트 표준을 만들었습니다.</li>
       </ul>
+      </div>
+    </div>
+      <div id='fifth'>
+      <script>
+      var fruit=["strawberry", "apple", "banana", "peach", "orange"]
+      var gitlist=["git-add","git-status","git-commit","git-reset","git-cherrypick"]
 
+      var i =0;
+      while(i<5){
+        document.write('<div id="box" class="container"><h4><a href="fruit.html">'+fruit[i]+'</a></h4></div>');
+        i = i + 1;
+      }
+      var j =0;
+      while(j<5){
+        document.write('<div id="box" class="container"><h4><a href="git.html">'+gitlist[j]+'</a></h4></div>');
+        j = j + 1;
+      }
 
-  </div>
+      </script>
+      </div>
